@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.navigation.toRoute
+import com.example.fruitcatalogue.data.Fruit
 import com.example.fruitcatalogue.ui.components.FruitDetail
 import com.example.fruitcatalogue.ui.components.FruitDetailScreen
 import com.example.fruitcatalogue.ui.components.FruitList
@@ -31,9 +32,9 @@ class MainActivity : ComponentActivity() {
                         FruitListScreen(navController)
                     }
 
-                    composable<FruitList> { backStackTrace ->
-                        val fruitId: Int = backStackTrace.toRoute()
-                        FruitDetailScreen(navController, fruitId)
+                    composable<FruitDetail> { backStackTrace ->
+                        val fruitDetail: FruitDetail = backStackTrace.toRoute()
+                        FruitDetailScreen(navController, fruitDetail.fruitId)
                     }
                 }
             }

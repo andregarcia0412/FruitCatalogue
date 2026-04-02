@@ -48,7 +48,7 @@ fun FruitListScreen(navController: NavController) {
                 FruitCard(
                     fruit = fruit
                 ) {
-                    navController.navigate(FruitDetail)
+                    navController.navigate(FruitDetail(fruitId = fruit.id))
                 }
             }
         }
